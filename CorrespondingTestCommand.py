@@ -9,11 +9,16 @@ def find_corresponding_test(file_path):
   # test_filename = project_file_path.replace(".rb", "_spec.rb")
   # test_file_path = file_path_parts[0] + "spec/" + test_filename
   # return test_file_path;
-  return file_path.replace('app', 'spec').replace('.rb', '_spec.rb');
+  return file_path.replace('/app/', '/spec/').replace('/lib/', '/spec/lib/').replace('.rb', '_spec.rb');
 
 class CorrespondingTestCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     current_file = self.view.file_name();
+    print(current_file);
+
+    if current_file is None:
+      return;
+
     if not re.search('/voice/', current_file):
       return;
 
