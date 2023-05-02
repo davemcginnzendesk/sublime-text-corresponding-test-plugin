@@ -1,0 +1,13 @@
+[
+	{
+		"id": "tools",
+		"children":
+		[
+			{
+				"caption": "Open Corresponding Test",
+				"command": "corresponding_test",
+
+			}
+		]
+	}
+]
